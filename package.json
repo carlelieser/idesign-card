@@ -1,0 +1,16 @@
+{
+  "name": "idesign-card",
+  "version": "1.0.0",
+  "description": "iDesign contact card creator.",
+  "main": "index.js",
+  "scripts": {
+    "start": "electron ."
+  },
+  "author": "Carlos E. Santos",
+  "license": "MIT",
+  "dependencies": {
+    "electron": "^6.0.7",
+    "react": "^16.9.0",
+    "react-dom": "^16.9.0"
+  }
+}
