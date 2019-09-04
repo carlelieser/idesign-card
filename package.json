@@ -2,7 +2,7 @@
   "name": "idesign-card",
   "version": "1.0.0",
   "description": "iDesign contact card creator.",
-  "main": "index.js",
+  "main": "main.js",
   "scripts": {
     "start": "electron ."
   },
