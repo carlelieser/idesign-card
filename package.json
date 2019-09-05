@@ -12,7 +12,9 @@
     "electron": "^6.0.7",
     "react": "^16.9.0",
     "react-dom": "^16.9.0",
-    "react-input-mask": "^2.0.4"
+    "react-input-mask": "^2.0.4",
+    "react-motion": "^0.5.2",
+    "react-reveal": "^1.2.2"
   },
   "devDependencies": {
     "babel": "^6.23.0",
