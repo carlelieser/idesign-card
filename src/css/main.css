@@ -3,35 +3,70 @@ body {
     margin: 0;
     padding: 0;
     cursor: default;
+    overflow:hidden;
 }
 
 .app-container {
     width: 100%;
     height: auto;
-    min-height: 100%;
+    max-height: 100%;
     top: 0;
     left: 0;
     position: absolute;
     overflow-x: hidden;
     background: rgb(36, 107, 255);
-    background: linear-gradient(180deg, rgb(255, 255, 255) 0%, rgba(223, 223, 223,75) 100%);
-    padding-bottom: 150px;
+    background: linear-gradient(180deg, rgb(255, 255, 255) 0%, rgba(223, 223, 223, 75) 100%);
 }
 
-.app-container>.title {
+.app-container>.logo {
     width: 100%;
     height: 120px;
-    font-family: 'Source Sans Pro', sans-serif;
-    font-size: 42px;
-    font-style: italic;
-    color: rgb(0, 0, 0);
-    text-align: center;
+    background-image: url('../imgs/id.png');
+    background-size: 98px;
+    background-position: center;
+    background-repeat: no-repeat;
+    margin-top: 40px;
+    margin-bottom: -40px;
+}
+
+.app-container>.footer {
+    width: calc(100% - 80px);
+    height: 60px;
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-top: 40px;
-    margin-bottom: -40px;
+    margin: 0px auto;
+    border-radius: 4px;
+    background-color: #FFF;
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 14px;
+    color: rgba(0, 0, 0, 0.81);
     user-select: none;
+    margin-bottom: 150px;
+}
+
+.app-container>.snack-bar{
+    width: 150px;
+    height: 50px;
+    border-radius: 4px;
+    background-color: rgba(53, 53, 53, 0.91);
+    box-shadow: 0px 8px 20px -5px rgba(0,0,0,0.2);
+    color: #FFF;
+    font-family: 'Source Sans Pro', sans-serif;
+    font-weight: bold;
+    font-size: 14px;
+    display: flex;
+    align-items:center;
+    justify-content: flex-start;
+    padding: 20px;
+    box-sizing: border-box;
+    position:fixed;
+    z-index: 500;
+    bottom:0;
+    left:0;
+    margin: 40px;
+    user-select: none;
+    pointer-events: none;
 }
 
 .app-container>.button-container {
@@ -41,13 +76,13 @@ body {
     position: fixed;
     left: 0;
     bottom: 0;
-    display:flex;
-    align-items:center;
-    justify-content: center;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
     pointer-events: none;
 }
 
-.app-container>.button-container>div{
+.app-container>.button-container>.send {
     width: 80px;
     height: 80px;
     background-color: rgb(55, 255, 162);
@@ -55,10 +90,41 @@ body {
     background-size: 28px;
     background-position: center;
     background-image: url('../imgs/send.png');
-    background-repeat:no-repeat;
+    background-repeat: no-repeat;
     box-shadow: 0px 10px 20px -5px rgba(55, 255, 162, 0.233);
+    margin-right: 30px;
+    transition: all .2s cubic-bezier(0.455, 0.03, 0.515, 0.955);
     pointer-events: all;
-    cursor:pointer;
+    cursor: pointer;
+    z-index: 100;
+}
+
+
+.app-container>.button-container>.send:hover {
+    background-color: rgb(255, 255, 255);
+    box-shadow: 0px 10px 20px -5px rgba(255, 255, 255, 0.233);
+    transform: rotate(360deg) scale(1.1);
+}
+
+.app-container>.button-container>.send:hover+.bg {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 1;
+    pointer-events: all;
+}
+
+.bg {
+    width: 1100px;
+    height: 1100px;
+    transition: all .4s cubic-bezier(0.455, 0.03, 0.515, 0.955);
+    background: linear-gradient(180deg, rgba(55, 255, 162, 0.91) 0%, rgb(55, 255, 162) 100%);
+    border-radius: 100%;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-30%, -50%) scale(0);
+    pointer-events: none;
+    opacity: 0;
+    z-index: 0;
 }
 
 .app-container>.form {
@@ -110,13 +176,48 @@ textarea {
     resize: none;
 }
 
-input:focus{
+.app-container>.form>.data-container>.predictions {
+    width: 100%;
+    height: auto;
+    max-height: 150px;
+    overflow-x: hidden;
+    padding: 20px;
+    box-sizing: border-box;
+    background-color: rgb(255, 255, 255);
+    border-radius: 4px;
+}
+
+.app-container>.form>.data-container>.predictions>div {
+    font-family: 'Source Sans Pro', sans-serif;
+}
+
+.app-container>.form>.data-container>.predictions>div:not(:first-child) {
+    margin-top: 10px;
+}
+
+.app-container>.form>.data-container>.predictions>div>.main-text {
+    font-size: 14px;
+    font-weight: 700;
+    color: rgba(0, 0, 0, 0.81);
+}
+
+.app-container>.form>.data-container>.predictions>div>.secondary-text {
+    font-size: 12px;
+    color: rgba(0, 0, 0, 0.71);
+}
+
+input:focus {
     transform: scale(1.05);
 }
 
-textarea:focus{
+input:focus+.predictions {
+    transform: scale(1.05);
+}
+
+textarea:focus {
     transform: scale(1.05) translateY(10px);
 }
+
 
 .drag {
     width: 100%;
@@ -124,10 +225,18 @@ textarea:focus{
     top: 0;
     left: 0;
     position: fixed;
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 12px;
+    font-style: italic;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     background-color: rgb(255, 255, 255);
+    color: rgba(0, 0, 0, 0.71);
     z-index: 1000;
     -webkit-app-region: drag;
     box-shadow: 0px 4px 20px -4px rgba(0, 0, 0, 0.1);
+    user-select: none;
 }
 
 ::-webkit-scrollbar {
