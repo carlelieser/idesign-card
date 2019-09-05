@@ -16,6 +16,7 @@ class App extends Component{
 
         this.state = {
             scrollTop: 0,
+            showApp: false,
             showCopied: false,
             inputs: [{
                 title: "Full name",
@@ -102,11 +103,17 @@ class App extends Component{
     }
 
     shouldComponentUpdate(nextProps, nextState){
-        if(nextState.scrollTop === this.state.scrollTop && nextState.inputs === this.state.inputs && nextState.showCopied === this.state.showCopied){
+        if(nextState.scrollTop === this.state.scrollTop && nextState.inputs === this.state.inputs && nextState.showCopied === this.state.showCopied && nextState.showApp === this.state.showApp){
             return false;
         }else{
             return true;
         }
+    }
+
+    componentDidMount(){
+        setTimeout(() => {
+            this.setState({showApp: true});
+        }, 1000);
     }
 
     render(){
@@ -115,22 +122,24 @@ class App extends Component{
         });
 
         return (
-            <div className="app-container" ref={this.appRef}>
-                <div className="drag">iDesign Card</div>
-                <div className="logo"></div>
-                <div className="form">{contactData}</div>
-                <div className="footer">Made with ❤️ by Carlos Santos.</div>
-                <Fade when={this.state.showCopied} distance="10%" duration={400} left>
-                    <div className="snack-bar">Copied!</div>
-                </Fade>
-                <div className="button-container">
-                    <div className="send" onClick={this.sendEmail}></div>
-                    <div className="bg"></div>
+                <div className="app-container" ref={this.appRef}>
+                    <div className="drag">iDesign Card</div>
+                    <Fade when={this.state.showApp} distance="10%" bottom>
+                    <div className="logo"></div>
+                    <div className="form">{contactData}</div>
+                    <div className="footer">Made with ❤️ by Carlos Santos.</div>
+                    <Fade when={this.state.showCopied} distance="10%" duration={400} left>
+                        <div className="snack-bar">Copied!</div>
+                    </Fade>
+                    <div className="button-container">
+                        <div className="send" onClick={this.sendEmail}></div>
+                        <div className="bg"></div>
+                    </div>
+                    <Motion style={{scrollTop: spring(this.state.scrollTop)}} onRest={this.setSynthetic}>
+                        {this.renderScrollSink}
+                    </Motion>
+                    </Fade>
                 </div>
-                <Motion style={{scrollTop: spring(this.state.scrollTop)}} onRest={this.setSynthetic}>
-                    {this.renderScrollSink}
-                </Motion>
-            </div>
         )
     }
 }
