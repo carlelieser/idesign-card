@@ -1,17 +1,19 @@
 import {Component} from 'react'
 
-class ScrollSink extends Component{
-    constructor(props){
+class ScrollSink extends Component {
+    constructor(props) {
         super(props);
     }
-    
-    componentDidUpdate(prevProps){
-        if(prevProps.scrollTop !== this.props.scrollTop){
-           this.props.changeScrollTop(this.props.scrollTop);
+
+    componentDidUpdate(prevProps) {
+        if (prevProps.scrollTop !== this.props.scrollTop) {
+            this
+                .props
+                .changeScrollTop(this.props.scrollTop);
         }
     }
 
-    render(){
+    render() {
         return null;
     }
 }
