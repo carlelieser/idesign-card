@@ -11,7 +11,7 @@ Clicking the send button will copy the information in the form to an email templ
 The HTML email template should look something like this:
 
 <p align="center">
-    <img width="512" height="712" src="./src/imgs/screenshots/screenshot-3.png">
+    <img width="479" height="704" src="./src/imgs/screenshots/screenshot-3.png">
 </p>
 
 
