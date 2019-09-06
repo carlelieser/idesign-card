@@ -5,6 +5,13 @@ Clicking the send button will copy the information in the form to an email templ
 
 <p align="center">
     <img width="512" height="712" src="./src/imgs/screenshots/screenshot-1.png">
+    <img width="512" height="712" src="./src/imgs/screenshots/screenshot-2.png">
+</p>
+
+The HTML email template should look something like this:
+
+<p align="center">
+    <img width="512" height="712" src="./src/imgs/screenshots/screenshot-3.png">
 </p>
 
 
