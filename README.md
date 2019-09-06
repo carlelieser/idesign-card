@@ -8,6 +8,22 @@ Clicking the send button will copy the information in the form to an email templ
     <img width="512" height="712" src="./src/imgs/screenshots/screenshot-2.png">
 </p>
 
+## Usage
+Download or clone the repo and then...
+
+1. `npm install`
+
+2. `npm start`
+
+## Build
+To build for any given platform...
+
+1. `npm run compile`
+
+2. `npm run build`
+
+3. `npm run dist`
+
 The HTML email template should look something like the image below with actionable links to phone numbers, emails, and addresses.
 
 <p align="center">
