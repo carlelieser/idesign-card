@@ -1,38 +1,45 @@
 {
-  "name": "idesign-card",
-  "version": "1.0.0",
-  "description": "iDesign contact card creator.",
-  "main": "main.js",
-  "build": {
-    "appId": "com.electron.${name}",
-    "productName": "iDesign Card",
-    "mac": {
-      "category": "public.app-category.productivity"
+    "name": "idesign-card",
+    "version": "1.0.0",
+    "description": "iDesign contact card creator.",
+    "main": "main.js",
+    "build": {
+        "appId": "com.electron.${name}",
+        "productName": "iDesign Card",
+        "mac": {
+            "category": "public.app-category.productivity",
+            "icon": "./src/imgs/icons/icon.icns"
+        },
+        "win": {
+            "icon": "./src/imgs/icons/icon.ico"
+        },
+        "linux": {
+            "icon": "./src/imgs/icons/icon.png"
+        }
+    },
+    "scripts": {
+        "start": "electron .",
+        "compile": "babel ./src/js --out-dir ./src/dist/js",
+        "build": "electron-builder --dir",
+        "dist": "electron-builder"
+    },
+    "author": "Carlos E. Santos",
+    "license": "MIT",
+    "dependencies": {
+        "react": "^16.9.0",
+        "react-dom": "^16.9.0",
+        "react-input-mask": "^2.0.4",
+        "react-motion": "^0.5.2",
+        "react-reveal": "^1.2.2",
+        "request": "^2.88.0"
+    },
+    "devDependencies": {
+        "electron": "^6.0.7",
+        "babel-cli": "^6.26.0",
+        "babel-preset-env": "^1.7.0",
+        "babel-preset-react": "^6.24.1",
+        "babel-preset-stage-0": "^6.24.1",
+        "babel-register": "^6.26.0",
+        "electron-builder": "^21.2.0"
     }
-  },
-  "scripts": {
-    "start": "electron .",
-    "compile": "babel ./src/js --out-dir ./src/dist/js",
-    "build": "electron-builder --dir",
-    "dist": "electron-builder"
-  },
-  "author": "Carlos E. Santos",
-  "license": "MIT",
-  "dependencies": {
-    "react": "^16.9.0",
-    "react-dom": "^16.9.0",
-    "react-input-mask": "^2.0.4",
-    "react-motion": "^0.5.2",
-    "react-reveal": "^1.2.2",
-    "request": "^2.88.0"
-  },
-  "devDependencies": {
-    "electron": "^6.0.7",
-    "babel-cli": "^6.26.0",
-    "babel-preset-env": "^1.7.0",
-    "babel-preset-react": "^6.24.1",
-    "babel-preset-stage-0": "^6.24.1",
-    "babel-register": "^6.26.0",
-    "electron-builder": "^21.2.0"
-  }
 }
