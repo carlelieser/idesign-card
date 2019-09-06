@@ -8,7 +8,7 @@ Clicking the send button will copy the information in the form to an email templ
     <img width="512" height="712" src="./src/imgs/screenshots/screenshot-2.png">
 </p>
 
-The HTML email template should look something like this:
+The HTML email template should look something like the image below with actionable links to phone numbers, emails, and addresses.
 
 <p align="center">
     <img width="479" height="704" src="./src/imgs/screenshots/screenshot-3.png">
