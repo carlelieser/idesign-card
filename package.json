@@ -15,7 +15,8 @@
         },
         "linux": {
             "icon": "./src/imgs/icons/icon.png"
-        }
+        },
+        "afterSign": "./notarize.js"
     },
     "scripts": {
         "start": "electron .",
@@ -34,12 +35,13 @@
         "request": "^2.88.0"
     },
     "devDependencies": {
-        "electron": "^6.0.7",
         "babel-cli": "^6.26.0",
         "babel-preset-env": "^1.7.0",
         "babel-preset-react": "^6.24.1",
         "babel-preset-stage-0": "^6.24.1",
         "babel-register": "^6.26.0",
-        "electron-builder": "^21.2.0"
+        "electron": "^6.0.7",
+        "electron-builder": "^21.2.0",
+        "electron-notarize": "^0.1.1"
     }
 }
