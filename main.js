@@ -99,6 +99,7 @@ function createWindow() {
         resizable: false,
         title: 'iDesign Card',
         titleBarStyle: 'hiddenInset',
+        icon: __dirname + '/src/imgs/icons/icon.icns',
         show: false,
         webPreferences: {
             nodeIntegration: true
