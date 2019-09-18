@@ -26,7 +26,6 @@ class Input extends Component {
 
     handleFocus = (e) => {
         let scrollTop = e.target.offsetTop - 150;
-
         this
             .props
             .setScroll(scrollTop);
@@ -65,6 +64,10 @@ class Input extends Component {
         });
     }
 
+    handleClose = () => {
+        this.setState({showPredictions: false});
+    }
+
     handleChange = (e) => {
         let value = e.target.value;
         this
@@ -101,7 +104,7 @@ class Input extends Component {
     componentDidUpdate(prevProps, prevState) {
         if (prevProps.showCopied !== this.props.showCopied) {
             if (this.props.showCopied) {
-                this.setState({value: ''});
+                this.fillInput('');
             }
         }
     }
@@ -148,6 +151,7 @@ class Input extends Component {
 }
                 {this.state.showPredictions
                     ? <div className="predictions">
+                            <span className="close-predictions" onClick={this.handleClose}></span>
                             {predictions}
                         </div>
                     : ''
