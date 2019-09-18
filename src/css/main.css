@@ -1,9 +1,9 @@
-html,
-body {
+body,
+html {
     margin: 0;
     padding: 0;
     cursor: default;
-    overflow:hidden;
+    overflow: hidden;
 }
 
 .app-container {
@@ -18,7 +18,7 @@ body {
     background: linear-gradient(180deg, rgb(255, 255, 255) 0%, rgba(223, 223, 223, 75) 100%);
 }
 
-.app-container>.logo {
+.app-container > .logo {
     width: 100%;
     height: 120px;
     background-image: url('../imgs/id.png');
@@ -29,13 +29,13 @@ body {
     margin-bottom: -40px;
 }
 
-.app-container>.footer {
+.app-container > .footer {
     width: calc(100% - 80px);
     height: 60px;
     display: flex;
     align-items: center;
     justify-content: center;
-    margin: 0px auto;
+    margin: 0 auto;
     border-radius: 4px;
     background-color: #FFF;
     font-family: 'Source Sans Pro', sans-serif;
@@ -45,31 +45,31 @@ body {
     margin-bottom: 150px;
 }
 
-.app-container>.snack-bar{
+.app-container > .snack-bar {
     width: 150px;
     height: 50px;
     border-radius: 4px;
     background-color: rgba(53, 53, 53, 0.91);
-    box-shadow: 0px 8px 20px -5px rgba(0,0,0,0.2);
+    box-shadow: 0 8px 20px -5px rgba(0,0,0,0.2);
     color: #FFF;
     font-family: 'Source Sans Pro', sans-serif;
     font-weight: bold;
     font-size: 14px;
     display: flex;
-    align-items:center;
+    align-items: center;
     justify-content: flex-start;
     padding: 20px;
     box-sizing: border-box;
-    position:fixed;
+    position: fixed;
     z-index: 500;
-    bottom:0;
-    left:0;
+    bottom: 0;
+    left: 0;
     margin: 40px;
     user-select: none;
     pointer-events: none;
 }
 
-.app-container>.button-container {
+.app-container > .button-container {
     width: 100%;
     height: 150px;
     background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, rgb(255, 255, 255) 100%);
@@ -82,7 +82,7 @@ body {
     pointer-events: none;
 }
 
-.app-container>.button-container>.send {
+.app-container > .button-container > .send {
     width: 80px;
     height: 80px;
     background-color: rgb(55, 255, 162);
@@ -91,22 +91,19 @@ body {
     background-position: center;
     background-image: url('../imgs/send.png');
     background-repeat: no-repeat;
-    box-shadow: 0px 10px 20px -5px rgba(55, 255, 162, 0.233);
+    box-shadow: 0 10px 20px -5px rgba(55, 255, 162, 0.233);
     margin-right: 30px;
-    transition: all .2s cubic-bezier(0.455, 0.03, 0.515, 0.955);
+    transition: all 0.2s cubic-bezier(0.455, 0.03, 0.515, 0.955);
     pointer-events: all;
     cursor: pointer;
     z-index: 100;
 }
-
-
-.app-container>.button-container>.send:hover {
+.app-container > .button-container > .send:hover {
     background-color: rgb(255, 255, 255);
-    box-shadow: 0px 10px 20px -5px rgba(255, 255, 255, 0.233);
+    box-shadow: 0 10px 20px -5px rgba(255, 255, 255, 0.233);
     transform: rotate(360deg) scale(1.1);
 }
-
-.app-container>.button-container>.send:hover+.bg {
+.app-container > .button-container > .send:hover+.bg {
     transform: translate(-50%, -50%) scale(1);
     opacity: 1;
     pointer-events: all;
@@ -115,7 +112,7 @@ body {
 .bg {
     width: 1100px;
     height: 1100px;
-    transition: all .4s cubic-bezier(0.455, 0.03, 0.515, 0.955);
+    transition: all 0.4s cubic-bezier(0.455, 0.03, 0.515, 0.955);
     background: linear-gradient(180deg, rgba(55, 255, 162, 0.91) 0%, rgb(55, 255, 162) 100%);
     border-radius: 100%;
     position: absolute;
@@ -127,22 +124,22 @@ body {
     z-index: 0;
 }
 
-.app-container>.form {
+.app-container > .form {
     padding: 40px;
     box-sizing: border-box;
 }
 
-.app-container>.form>.data-container {
+.app-container > .form > .data-container {
     margin-top: 20px;
 }
 
-.app-container>.form>.data-container>* {
+.app-container > .form > .data-container > * {
     display: block;
     margin-top: 10px;
-    transition: all .2s cubic-bezier(0.455, 0.03, 0.515, 0.955);
+    transition: all 0.2s cubic-bezier(0.455, 0.03, 0.515, 0.955);
 }
 
-.app-container>.form>.data-container>label {
+.app-container > .form > .data-container > label {
     font-family: 'Source Sans Pro', sans-serif;
     font-size: 14px;
     font-weight: 700;
@@ -150,11 +147,11 @@ body {
     user-select: none;
 }
 
-.app-container>.form>.data-container>input,
+.app-container > .form > .data-container > input,
 textarea {
     width: 100%;
     border-radius: 4px;
-    box-shadow: 0px 10px 25px -5px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
     padding-left: 20px;
     padding-right: 20px;
     box-sizing: border-box;
@@ -165,18 +162,18 @@ textarea {
     font-weight: 500;
 }
 
-.app-container>.form>.data-container>input {
+.app-container > .form > .data-container > input {
     height: 50px;
 }
 
-.app-container>.form>.data-container>textarea {
+.app-container > .form > .data-container > textarea {
     padding-top: 20px;
     padding-bottom: 20px;
     height: 200px;
     resize: none;
 }
 
-.app-container>.form>.data-container>.predictions {
+.app-container > .form > .data-container > .predictions {
     width: 100%;
     height: auto;
     max-height: 150px;
@@ -185,39 +182,49 @@ textarea {
     box-sizing: border-box;
     background-color: rgb(255, 255, 255);
     border-radius: 4px;
+    position: relative;
 }
 
-.app-container>.form>.data-container>.predictions>div {
+.app-container > .form > .data-container > .predictions > div {
     font-family: 'Source Sans Pro', sans-serif;
 }
-
-.app-container>.form>.data-container>.predictions>div:not(:first-child) {
+.app-container > .form > .data-container > .predictions > div:not(:first-child) {
     margin-top: 10px;
 }
 
-.app-container>.form>.data-container>.predictions>div>.main-text {
+.app-container > .form > .data-container > .predictions > div > .main-text {
     font-size: 14px;
     font-weight: 700;
     color: rgba(0, 0, 0, 0.81);
 }
 
-.app-container>.form>.data-container>.predictions>div>.secondary-text {
+.app-container > .form > .data-container > .predictions > div > .secondary-text {
     font-size: 12px;
     color: rgba(0, 0, 0, 0.71);
 }
 
+.close-predictions {
+    width: 15px;
+    height: 15px;
+    top: 0;
+    right: 0;
+    margin: 20px;
+    position: absolute;
+    background-image: url('../imgs/close.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 15px;
+    opacity: 0.71;
+}
 input:focus {
     transform: scale(1.05);
 }
-
 input:focus+.predictions {
     transform: scale(1.05);
 }
-
 textarea:focus {
     transform: scale(1.05) translateY(10px);
 }
-
 
 .drag {
     width: 100%;
@@ -235,20 +242,18 @@ textarea:focus {
     color: rgba(0, 0, 0, 0.71);
     z-index: 1000;
     -webkit-app-region: drag;
-    box-shadow: 0px 4px 20px -4px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 20px -4px rgba(0, 0, 0, 0.1);
     user-select: none;
 }
 
 ::-webkit-scrollbar {
-    width: 0px;
+    width: 0;
 }
-
 @font-face {
     font-family: "Source Sans Pro";
     font-weight: normal;
     src: url('../fonts/SourceSansPro-Regular.ttf');
 }
-
 @font-face {
     font-family: "Source Sans Pro";
     font-weight: bold;
