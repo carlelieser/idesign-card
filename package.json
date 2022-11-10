@@ -40,7 +40,7 @@
         "babel-preset-react": "^6.24.1",
         "babel-preset-stage-0": "^6.24.1",
         "babel-register": "^6.26.0",
-        "electron": "^6.0.7",
+        "electron": "^18.3.7",
         "electron-builder": "^21.2.0",
         "electron-notarize": "^0.1.1"
     }
